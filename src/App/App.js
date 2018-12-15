@@ -5,6 +5,9 @@ import connection from '../helpers/data/connection';
 import Auth from '../components/Auth/Auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
+import Profile from '../components/Profile/Profile';
+import Form from '../components/Form/Form';
+import ResourceTracker from '../components/ResourceTracker/ResourceTracker';
 import './App.scss';
 import authRequests from '../helpers/data/authRequests';
 
@@ -55,6 +58,15 @@ render() {
   return (
       <div className="App">
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
+        <div className="row">
+        <div className="col-3 align-self-start">
+          <Profile><h2>Profile</h2></Profile>
+        </div>
+        <div className="col-9 align-self-start">
+          <Form><h2>Form</h2></Form>
+          <ResourceTracker><h2>Resource Tracker</h2></ResourceTracker>
+        </div>
+        </div>
       </div>
   );
 }
