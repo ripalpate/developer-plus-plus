@@ -10,6 +10,7 @@ import Form from '../components/Form/Form';
 import ResourceTracker from '../components/ResourceTracker/ResourceTracker';
 import './App.scss';
 import authRequests from '../helpers/data/authRequests';
+import profileRequest from '../helpers/data/profileRequest';
 
 class App extends Component {
     // eslint-disable-next-line no-undef
@@ -19,6 +20,12 @@ class App extends Component {
 
     componentDidMount() {
       connection();
+      profileRequest.getRequest()
+        .then(() => {
+
+        })
+        .catch(err => console.error(err));
+
       this.removeListener = firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           this.setState({
