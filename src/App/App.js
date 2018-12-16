@@ -20,17 +20,22 @@ class App extends Component {
 
     componentDidMount() {
       connection();
-      profileRequest.getRequest()
-        .then(() => {
+      // profileRequest.getRequest()
+      //   .then(() => {
 
-        })
-        .catch(err => console.error(err));
+      //   })
+      //   .catch(err => console.error(err));
 
       this.removeListener = firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           this.setState({
             authed: true,
           });
+          profileRequest.getRequest()
+            .then(() => {
+
+            })
+            .catch(err => console.error(err));
         } else {
           this.setState({
             authed: false,
