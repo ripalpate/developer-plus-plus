@@ -76,10 +76,10 @@ render() {
       <div className="App">
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
         <div className="row">
-        <div className="col-3 align-self-start">
+        <div className="col-4 align-self-start">
           <Profile profile={this.state.profile}/>
         </div>
-        <div className="col-9 align-self-start">
+        <div className="col-8 align-self-start">
           <Form><h2>Form</h2></Form>
           <ResourceTracker><h2>Resource Tracker</h2></ResourceTracker>
         </div>
