@@ -16,26 +16,29 @@ class App extends Component {
     // eslint-disable-next-line no-undef
     state = {
       authed: false,
+      profile: [],
     };
 
     componentDidMount() {
       connection();
-      // profileRequest.getRequest()
-      //   .then(() => {
-
-      //   })
-      //   .catch(err => console.error(err));
+      profileRequest.getRequest()
+        .then((profile) => {
+          this.setState({ profile });
+          console.log(this.state.profile);
+        })
+        .catch(err => console.error(err));
 
       this.removeListener = firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           this.setState({
             authed: true,
           });
-          profileRequest.getRequest()
-            .then(() => {
-
-            })
-            .catch(err => console.error(err));
+          // profileRequest.getRequest()
+          //   // .then((profile) => {
+          //   //   this.setState({ profile });
+          //   //   console.log(this.state.profile);
+          //   // })
+          //   .catch(err => console.error(err));
         } else {
           this.setState({
             authed: false,
@@ -52,6 +55,7 @@ isAuthenticated = () => {
   this.setState({ authed: true });
 }
 
+
 render() {
   const logoutClickEvent = () => {
     authRequests.logoutUser();
@@ -65,14 +69,15 @@ render() {
         </div>
     );
   }
+
   // //passing reference not calling it
-  console.log(this);
+  // console.log(this);
   return (
       <div className="App">
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
         <div className="row">
         <div className="col-3 align-self-start">
-          <Profile><h2>Profile</h2></Profile>
+          <Profile profile={this.state.profile}/>
         </div>
         <div className="col-9 align-self-start">
           <Form><h2>Form</h2></Form>

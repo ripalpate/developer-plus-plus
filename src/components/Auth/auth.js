@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
 import './Auth.scss';
 
-let userName = '';
+// let userName = '';
 class Auth extends React.Component {
   static propTypes = {
     isAuthenticated: PropTypes.func,
@@ -13,7 +13,7 @@ class Auth extends React.Component {
   authenticateUser = (e) => {
     e.preventDefault(); // telling it to do only specific thing not the default of click event
     authRequests.authenticate().then((result) => {
-      userName = result.additionalUserInfo.username;
+      // userName = result.additionalUserInfo.username;
       this.props.isAuthenticated();
     }).catch(err => console.error('there was an error with auth', err));
   }
@@ -27,7 +27,7 @@ class Auth extends React.Component {
   }
 }
 
-const getUserName = () => userName;
+// const getUserName = () => userName;
 
 export default Auth;
-export { getUserName };
+// export { getUserName };
