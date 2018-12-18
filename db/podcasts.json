@@ -1,0 +1,12 @@
+{
+  "podcast1" : {
+    "name":"Javascript Jabber",
+    "url":"https://devchat.tv/js-jabber/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32"
+  },
+  "podcast2" : {
+    "name":"Code Newbie",
+    "url":"https://www.codenewbie.org/podcast",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32"
+  }
+}

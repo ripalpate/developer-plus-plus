@@ -11,6 +11,7 @@ import ResourceTracker from '../components/ResourceTracker/ResourceTracker';
 import './App.scss';
 import authRequests from '../helpers/data/authRequests';
 import profileRequest from '../helpers/data/profileRequest';
+import tutorialRequest from '../helpers/data/tutorialRequest';
 
 class App extends Component {
     // eslint-disable-next-line no-undef
@@ -18,6 +19,7 @@ class App extends Component {
       authed: false,
       githubUsername: '',
       profile: [],
+      tutorials: [],
     };
 
     componentDidUpdate() {
@@ -35,6 +37,12 @@ class App extends Component {
     componentDidMount() {
       connection();
       // console.log(this.state.githubUsername);
+      tutorialRequest.getTurtorialData()
+        .then((tutorials) => {
+          this.setState({ tutorials });
+          // console.log(this.state.tutorials);
+        })
+        .catch(error => console.error(error));
 
       this.removeListener = firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -87,7 +95,9 @@ render() {
         </div>
         <div className="col-9 align-self-start">
           <Form><h2>Form</h2></Form>
-          <ResourceTracker><h2>Resource Tracker</h2></ResourceTracker>
+          <ResourceTracker
+          tutorials = {this.state.tutorials}
+          />
         </div>
         </div>
       </div>
