@@ -13,8 +13,8 @@ class Auth extends React.Component {
   authenticateUser = (e) => {
     e.preventDefault(); // telling it to do only specific thing not the default of click event
     authRequests.authenticate().then((result) => {
-      // userName = result.additionalUserInfo.username;
-      this.props.isAuthenticated();
+      const user = result.additionalUserInfo.username;
+      this.props.isAuthenticated(user);
     }).catch(err => console.error('there was an error with auth', err));
   }
 

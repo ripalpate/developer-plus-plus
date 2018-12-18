@@ -16,29 +16,33 @@ class App extends Component {
     // eslint-disable-next-line no-undef
     state = {
       authed: false,
+      githubUsername: '',
       profile: [],
     };
 
+    componentDidUpdate() {
+      // console.log(this.state.githubUsername);
+      if (this.state.githubUsername && this.state.profile.length === 0) {
+        profileRequest.getRequest(this.state.githubUsername)
+          .then((profile) => {
+            this.setState({ profile });
+            // console.log(this.state.profile);
+          })
+          .catch(err => console.error(err));
+      }
+    }
+
     componentDidMount() {
       connection();
-      profileRequest.getRequest()
-        .then((profile) => {
-          this.setState({ profile });
-          console.log(this.state.profile);
-        })
-        .catch(err => console.error(err));
+      // console.log(this.state.githubUsername);
 
       this.removeListener = firebase.auth().onAuthStateChanged((user) => {
         if (user) {
+          const users = sessionStorage.getItem('githubUsername');
           this.setState({
             authed: true,
+            githubUsername: users,
           });
-          // profileRequest.getRequest()
-          //   // .then((profile) => {
-          //   //   this.setState({ profile });
-          //   //   console.log(this.state.profile);
-          //   // })
-          //   .catch(err => console.error(err));
         } else {
           this.setState({
             authed: false,
@@ -49,17 +53,19 @@ class App extends Component {
 
     componentWillUnmount() {
       this.removeListener();
+      authRequests.logoutUser();
     }
 
-isAuthenticated = () => {
-  this.setState({ authed: true });
+isAuthenticated = (username) => {
+  // console.log(username);
+  this.setState({ authed: true, githubUsername: username });
+  sessionStorage.setItem('githubUsername', username);
 }
-
 
 render() {
   const logoutClickEvent = () => {
     authRequests.logoutUser();
-    this.setState({ authed: false });
+    this.setState({ authed: false, githubUsername: '' });
   };
   if (!this.state.authed) {
     return (
@@ -76,10 +82,10 @@ render() {
       <div className="App">
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
         <div className="row">
-        <div className="col-4 align-self-start">
+        <div className="col-3 align-self-start">
           <Profile profile={this.state.profile}/>
         </div>
-        <div className="col-8 align-self-start">
+        <div className="col-9 align-self-start">
           <Form><h2>Form</h2></Form>
           <ResourceTracker><h2>Resource Tracker</h2></ResourceTracker>
         </div>
