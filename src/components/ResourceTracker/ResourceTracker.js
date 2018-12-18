@@ -75,7 +75,6 @@ class ResourceTracker extends React.Component {
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
-            <h4>Tutorials</h4>
             <ul>{tutorialsItemComponent}</ul>
           </TabPane>
           <TabPane tabId="2">
