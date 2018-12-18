@@ -1,11 +1,12 @@
 import axios from 'axios';
-// import { getUserName } from '../../components/Auth/Auth';
+import apiKeys from '../apiKeys';
 
-const getRequest = () => new Promise((resolve, reject) => {
-  // const userName = getUserName();
-  // console.log(userName)
+const clientId = apiKeys.githubApi.client_id;
+const clientSecret = apiKeys.githubApi.client_secret;
+
+const getRequest = githubUsername => new Promise((resolve, reject) => {
   axios
-    .get('https://api.github.com/users/ripalpate')
+    .get(`https://api.github.com/users/${githubUsername}?client_id=${clientId}&client_secret=${clientSecret}`)
     .then((result) => {
       resolve(result.data);
     })
