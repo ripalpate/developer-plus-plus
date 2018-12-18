@@ -33,8 +33,9 @@ class ResourceTracker extends React.Component {
     const tutorialsItemComponent = tutorials.map(tutorial => (
       <Tutorials
       tutorial = {tutorial}
+      key={tutorial.id}
       />
-    ))
+    ));
     return (
       <div className="Resource col">
         <h2>Resource Tracker</h2>
