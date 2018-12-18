@@ -8,6 +8,7 @@ import {
   NavLink,
 } from 'reactstrap';
 import classnames from 'classnames';
+import Tutorials from '../Tutorials/Tutorials';
 
 class ResourceTracker extends React.Component {
   constructor(props) {
@@ -28,6 +29,12 @@ class ResourceTracker extends React.Component {
   }
 
   render() {
+    const { tutorials } = this.props;
+    const tutorialsItemComponent = tutorials.map(tutorial => (
+      <Tutorials
+      tutorial = {tutorial}
+      />
+    ))
     return (
       <div className="Resource col">
         <h2>Resource Tracker</h2>
@@ -68,7 +75,8 @@ class ResourceTracker extends React.Component {
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
-            <h4>Tutorials.</h4>
+            <h4>Tutorials</h4>
+            <ul>{tutorialsItemComponent}</ul>
           </TabPane>
           <TabPane tabId="2">
             <h4>Resources.</h4>

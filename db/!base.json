@@ -1,0 +1,14 @@
+{
+	"tutorials": {
+		"name": "yo"
+	},
+	"resources": {
+		"name": "mama"
+	},
+	"blogs": {
+		"yo": "mamma"
+  },
+  "podcasts": {
+		"yo": "mamma"
+	}
+} 
