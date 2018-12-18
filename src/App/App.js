@@ -70,6 +70,17 @@ isAuthenticated = (username) => {
   sessionStorage.setItem('githubUsername', username);
 }
 
+deleteOne = (tutorialId) => {
+  tutorialRequest.deleteTutorial(tutorialId)
+    .then(() => {
+      tutorialRequest.getTurtorialData()
+        .then((tutorials) => {
+          this.setState({ tutorials });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
 render() {
   const logoutClickEvent = () => {
     authRequests.logoutUser();
@@ -97,6 +108,7 @@ render() {
           <Form><h2>Form</h2></Form>
           <ResourceTracker
           tutorials = {this.state.tutorials}
+          deleteSingleTutorial = {this.deleteOne}
           />
         </div>
         </div>
