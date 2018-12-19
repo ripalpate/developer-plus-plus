@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ResourceTracker.scss';
 import {
   TabContent,
@@ -11,6 +12,10 @@ import classnames from 'classnames';
 import Tutorials from '../Tutorials/Tutorials';
 
 class ResourceTracker extends React.Component {
+  static propTypes = {
+    deleteSingleTutorial: PropTypes.func,
+  }
+
   constructor(props) {
     super(props);
 
@@ -29,12 +34,14 @@ class ResourceTracker extends React.Component {
   }
 
   render() {
-    const { tutorials } = this.props;
+    const { tutorials, deleteSingleTutorial } = this.props;
     const tutorialsItemComponent = tutorials.map(tutorial => (
       <Tutorials
       tutorial = {tutorial}
+      key={tutorial.id}
+      deleteSingleTutorial = {deleteSingleTutorial}
       />
-    ))
+    ));
     return (
       <div className="Resource col">
         <h2>Resource Tracker</h2>
