@@ -21,8 +21,8 @@ render() {
   const makeButtons = () => {
     if (tutorial.uid === uid) {
       return (
-          <div>
-          <span className="col">
+          <div className="col-2 button">
+          <span className="">
             <button className="btn btn-default" onClick={this.deleteEvent}>
               <i className="fas fa-trash-alt"></i>
             </button>
@@ -34,9 +34,9 @@ render() {
   };
 
   return (
-    <li className="tutorial-item">
-      <span className="">{tutorial.name}</span>
-      <span className="">{tutorial.url}</span>
+    <li className="tutorial-item  row">
+      <span className="col-3">{tutorial.name}</span>
+      <a href={tutorial.url} className="col-4">{tutorial.url}</a>
       {makeButtons()}
     </li>
   );

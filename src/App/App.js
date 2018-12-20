@@ -49,7 +49,6 @@ class App extends Component {
       resourcesRequest.getResourceData()
         .then((resources) => {
           this.setState({ resources });
-          console.log(this.state.resources);
         })
         .catch(error => console.error(error));
 
