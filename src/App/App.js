@@ -89,6 +89,17 @@ deleteOne = (tutorialId) => {
     .catch(err => console.error(err));
 }
 
+deleteTwo = (resourceId) => {
+  resourcesRequest.deleteResource(resourceId)
+    .then(() => {
+      resourcesRequest.getResourceData()
+        .then((resources) => {
+          this.setState({ resources });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
 render() {
   const logoutClickEvent = () => {
     authRequests.logoutUser();
@@ -118,6 +129,7 @@ render() {
           tutorials = {this.state.tutorials}
           deleteSingleTutorial = {this.deleteOne}
           resources = {this.state.resources}
+          deleteSingleResource = {this.deleteTwo}
           />
         </div>
         </div>
