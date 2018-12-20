@@ -9,11 +9,13 @@ import {
   NavLink,
 } from 'reactstrap';
 import classnames from 'classnames';
+import trackerShape from '../../helpers/propz/trackerShape';
 import Tutorials from '../Tutorials/Tutorials';
 
 class ResourceTracker extends React.Component {
   static propTypes = {
     deleteSingleTutorial: PropTypes.func,
+    resources: PropTypes.arrayOf(trackerShape),
   }
 
   constructor(props) {
