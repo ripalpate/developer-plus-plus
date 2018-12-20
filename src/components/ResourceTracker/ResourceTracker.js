@@ -9,11 +9,15 @@ import {
   NavLink,
 } from 'reactstrap';
 import classnames from 'classnames';
+import trackerShape from '../../helpers/propz/trackerShape';
 import Tutorials from '../Tutorials/Tutorials';
+import Resources from '../Resources/Resources';
 
 class ResourceTracker extends React.Component {
   static propTypes = {
+    tutorials: PropTypes.arrayOf(trackerShape),
     deleteSingleTutorial: PropTypes.func,
+    resources: PropTypes.arrayOf(trackerShape),
   }
 
   constructor(props) {
@@ -42,6 +46,13 @@ class ResourceTracker extends React.Component {
       deleteSingleTutorial = {deleteSingleTutorial}
       />
     ));
+    const { resources } = this.props;
+    const resourcesItemCompent = resources.map(resource => (
+      <Resources
+      resource = {resource}
+      key={resource.id}
+      />
+    ))
     return (
       <div className="Resource col">
         <h2>Resource Tracker</h2>
@@ -85,7 +96,7 @@ class ResourceTracker extends React.Component {
             <ul>{tutorialsItemComponent}</ul>
           </TabPane>
           <TabPane tabId="2">
-            <h4>Resources.</h4>
+            <ul>{resourcesItemCompent}</ul>
           </TabPane>
           <TabPane tabId="3">
             <h4>Blogs.</h4>

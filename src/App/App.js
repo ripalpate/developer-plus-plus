@@ -12,6 +12,7 @@ import './App.scss';
 import authRequests from '../helpers/data/authRequests';
 import profileRequest from '../helpers/data/profileRequest';
 import tutorialRequest from '../helpers/data/tutorialRequest';
+import resourcesRequest from '../helpers/data/resourcesRequest';
 
 class App extends Component {
     // eslint-disable-next-line no-undef
@@ -20,6 +21,7 @@ class App extends Component {
       githubUsername: '',
       profile: [],
       tutorials: [],
+      resources: [],
     };
 
     componentDidUpdate() {
@@ -41,6 +43,12 @@ class App extends Component {
         .then((tutorials) => {
           this.setState({ tutorials });
           // console.log(this.state.tutorials);
+        })
+        .catch(error => console.error(error));
+
+      resourcesRequest.getResourceData()
+        .then((resources) => {
+          this.setState({ resources });
         })
         .catch(error => console.error(error));
 
@@ -109,6 +117,7 @@ render() {
           <ResourceTracker
           tutorials = {this.state.tutorials}
           deleteSingleTutorial = {this.deleteOne}
+          resources = {this.state.resources}
           />
         </div>
         </div>
