@@ -52,7 +52,7 @@ class ResourceTracker extends React.Component {
       resource = {resource}
       key={resource.id}
       />
-    ))
+    ));
     return (
       <div className="Resource col">
         <h2>Resource Tracker</h2>
