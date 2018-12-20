@@ -46,13 +46,14 @@ class ResourceTracker extends React.Component {
       deleteSingleTutorial = {deleteSingleTutorial}
       />
     ));
-    const { resources } = this.props;
+    const { resources, deleteSingleResource } = this.props;
     const resourcesItemCompent = resources.map(resource => (
       <Resources
       resource = {resource}
       key={resource.id}
+      deleteSingleResource = {deleteSingleResource}
       />
-    ))
+    ));
     return (
       <div className="Resource col">
         <h2>Resource Tracker</h2>
