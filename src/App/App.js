@@ -13,6 +13,7 @@ import authRequests from '../helpers/data/authRequests';
 import profileRequest from '../helpers/data/profileRequest';
 import tutorialRequest from '../helpers/data/tutorialRequest';
 import resourcesRequest from '../helpers/data/resourcesRequest';
+import blogRequest from '../helpers/data/blogRequest';
 
 class App extends Component {
     // eslint-disable-next-line no-undef
@@ -49,6 +50,13 @@ class App extends Component {
       resourcesRequest.getResourceData()
         .then((resources) => {
           this.setState({ resources });
+        })
+        .catch(error => console.error(error));
+
+      blogRequest.getBlogData()
+        .then((blogs) => {
+          this.setState({ blogs });
+          console.log(this.state.blogs);
         })
         .catch(error => console.error(error));
 
@@ -130,6 +138,7 @@ render() {
           deleteSingleTutorial = {this.deleteOne}
           resources = {this.state.resources}
           deleteSingleResource = {this.deleteTwo}
+          blogs = {this.state.blogs}
           />
         </div>
         </div>
