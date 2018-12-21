@@ -14,6 +14,7 @@ import profileRequest from '../helpers/data/profileRequest';
 import tutorialRequest from '../helpers/data/tutorialRequest';
 import resourcesRequest from '../helpers/data/resourcesRequest';
 import blogRequest from '../helpers/data/blogRequest';
+import podcastRequest from '../helpers/data/podcastRequest';
 
 class App extends Component {
     // eslint-disable-next-line no-undef
@@ -23,6 +24,8 @@ class App extends Component {
       profile: [],
       tutorials: [],
       resources: [],
+      blogs: [],
+      podcasts: [],
     };
 
     componentDidUpdate() {
@@ -57,6 +60,12 @@ class App extends Component {
         .then((blogs) => {
           this.setState({ blogs });
           // console.log(this.state.blogs);
+        })
+        .catch(error => console.error(error));
+
+      podcastRequest.getPodcastData()
+        .then((podcasts) => {
+          this.setState({ podcasts });
         })
         .catch(error => console.error(error));
 
