@@ -95,7 +95,7 @@ isAuthenticated = (username) => {
   sessionStorage.setItem('githubUsername', username);
 }
 
-deleteOne = (tutorialId) => {
+deleteTutorial = (tutorialId) => {
   tutorialRequest.deleteTutorial(tutorialId)
     .then(() => {
       tutorialRequest.getTurtorialData()
@@ -106,12 +106,34 @@ deleteOne = (tutorialId) => {
     .catch(err => console.error(err));
 }
 
-deleteTwo = (resourceId) => {
+deleteResource = (resourceId) => {
   resourcesRequest.deleteResource(resourceId)
     .then(() => {
       resourcesRequest.getResourceData()
         .then((resources) => {
           this.setState({ resources });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
+deleteBlog = (blogId) => {
+  blogRequest.deleteBlogData(blogId)
+    .then(() => {
+      blogRequest.getBlogData()
+        .then((blogs) => {
+          this.setState({ blogs });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
+deletePodcast = (podcastId) => {
+  podcastRequest.deletePodcastData(podcastId)
+    .then(() => {
+      podcastRequest.getPodcastData()
+        .then((podcasts) => {
+          this.setState({ podcasts });
         });
     })
     .catch(err => console.error(err));
@@ -144,11 +166,13 @@ render() {
           <Form><h2>Form</h2></Form>
           <ResourceTracker
           tutorials = {this.state.tutorials}
-          deleteSingleTutorial = {this.deleteOne}
+          deleteSingleTutorial = {this.deleteTutorial}
           resources = {this.state.resources}
-          deleteSingleResource = {this.deleteTwo}
+          deleteSingleResource = {this.deleteResource}
           blogs = {this.state.blogs}
+          deleteSingleBlog = {this.deleteBlog}
           podcasts = {this.state.podcasts}
+          deleteSinglePodcast = {this.deletePodcast}
           />
         </div>
         </div>
