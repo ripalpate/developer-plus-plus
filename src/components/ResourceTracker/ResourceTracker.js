@@ -12,12 +12,17 @@ import classnames from 'classnames';
 import trackerShape from '../../helpers/propz/trackerShape';
 import Tutorials from '../Tutorials/Tutorials';
 import Resources from '../Resources/Resources';
+import Blogs from '../Blogs/Blogs';
+import Podcasts from '../Podcasts/Podcasts';
 
 class ResourceTracker extends React.Component {
   static propTypes = {
     tutorials: PropTypes.arrayOf(trackerShape),
     deleteSingleTutorial: PropTypes.func,
     resources: PropTypes.arrayOf(trackerShape),
+    deleteSingleResource: PropTypes.func,
+    blogs: PropTypes.arrayOf(trackerShape),
+    podcasts: PropTypes.arrayOf(trackerShape),
   }
 
   constructor(props) {
@@ -52,6 +57,20 @@ class ResourceTracker extends React.Component {
       resource = {resource}
       key={resource.id}
       deleteSingleResource = {deleteSingleResource}
+      />
+    ));
+    const { blogs } = this.props;
+    const blogsItemComponent = blogs.map(blog => (
+      <Blogs
+      blog = {blog}
+      key={blog.id}
+      />
+    ));
+    const { podcasts } = this.props;
+    const podcastsItemComponent = podcasts.map(podcast => (
+      <Podcasts
+      podcast = {podcast}
+      key={podcast.id}
       />
     ));
     return (
@@ -100,10 +119,10 @@ class ResourceTracker extends React.Component {
             <ul>{resourcesItemCompent}</ul>
           </TabPane>
           <TabPane tabId="3">
-            <h4>Blogs.</h4>
+            <ul>{blogsItemComponent}</ul>
           </TabPane>
           <TabPane tabId="4">
-            <h4>Podcasts.</h4>
+            <ul>{podcastsItemComponent}</ul>
           </TabPane>
         </TabContent>
       </div>
