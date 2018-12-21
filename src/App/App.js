@@ -56,7 +56,7 @@ class App extends Component {
       blogRequest.getBlogData()
         .then((blogs) => {
           this.setState({ blogs });
-          console.log(this.state.blogs);
+          // console.log(this.state.blogs);
         })
         .catch(error => console.error(error));
 
