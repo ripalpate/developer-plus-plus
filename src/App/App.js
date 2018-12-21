@@ -148,6 +148,7 @@ render() {
           resources = {this.state.resources}
           deleteSingleResource = {this.deleteTwo}
           blogs = {this.state.blogs}
+          podcasts = {this.state.podcasts}
           />
         </div>
         </div>

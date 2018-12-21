@@ -39,7 +39,7 @@ render() {
         <span className="col-4">{resource.name}</span>
         <a href={resource.url} className="col-4">{resource.url}</a>
         {makeButtons()}
-    </li>
+      </li>
   );
 }
 }
