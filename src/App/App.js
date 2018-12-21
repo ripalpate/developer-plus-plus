@@ -117,6 +117,17 @@ deleteTwo = (resourceId) => {
     .catch(err => console.error(err));
 }
 
+deleteThree = (blogId) => {
+  blogRequest.deleteBlogData(blogId)
+    .then(() => {
+      blogRequest.getBlogData()
+        .then((blogs) => {
+          this.setState({ blogs });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
 render() {
   const logoutClickEvent = () => {
     authRequests.logoutUser();
@@ -148,6 +159,7 @@ render() {
           resources = {this.state.resources}
           deleteSingleResource = {this.deleteTwo}
           blogs = {this.state.blogs}
+          deleteSingleBlog = {this.deleteThree}
           podcasts = {this.state.podcasts}
           />
         </div>

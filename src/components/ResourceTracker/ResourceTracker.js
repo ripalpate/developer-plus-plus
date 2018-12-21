@@ -22,6 +22,7 @@ class ResourceTracker extends React.Component {
     resources: PropTypes.arrayOf(trackerShape),
     deleteSingleResource: PropTypes.func,
     blogs: PropTypes.arrayOf(trackerShape),
+    deleteSingleBlog: PropTypes.func,
     podcasts: PropTypes.arrayOf(trackerShape),
   }
 
@@ -59,11 +60,12 @@ class ResourceTracker extends React.Component {
       deleteSingleResource = {deleteSingleResource}
       />
     ));
-    const { blogs } = this.props;
+    const { blogs, deleteSingleBlog } = this.props;
     const blogsItemComponent = blogs.map(blog => (
       <Blogs
       blog = {blog}
       key={blog.id}
+      deleteSingleBlog = {deleteSingleBlog}
       />
     ));
     const { podcasts } = this.props;

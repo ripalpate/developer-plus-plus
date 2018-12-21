@@ -14,7 +14,7 @@ class Resources extends React.Component {
 deleteEvent = (e) => {
   e.preventDefault();
   const { deleteSingleResource, resource } = this.props;
-  deleteSingleResource(resource.id);
+  (deleteSingleResource(resource.id));
 }
 
 render() {
