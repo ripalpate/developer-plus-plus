@@ -139,6 +139,17 @@ deletePodcast = (podcastId) => {
     .catch(err => console.error(err));
 }
 
+formSubmitEvent = (newTutorial) => {
+  tutorialRequest.postRequest(newTutorial)
+    .then(() => {
+      tutorialRequest.getTurtorialData()
+        .then((tutorials) => {
+          this.setState({ tutorials });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
 render() {
   const logoutClickEvent = () => {
     authRequests.logoutUser();
@@ -163,7 +174,7 @@ render() {
           <Profile profile={this.state.profile}/>
         </div>
         <div className="col-9 align-self-start">
-          <Form><h2>Form</h2></Form>
+          <Form onSubmit={this.formSubmitEvent}/>
           <ResourceTracker
           tutorials = {this.state.tutorials}
           deleteSingleTutorial = {this.deleteTutorial}
