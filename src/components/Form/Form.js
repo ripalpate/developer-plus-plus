@@ -2,6 +2,7 @@ import React from 'react';
 import './Form.scss';
 import authRequests from '../../helpers/data/authRequests';
 
+
 const defaultTrackerForm = {
   name: '',
   url: '',
@@ -39,14 +40,19 @@ formSubmit = (e) => {
   myTracker.uid = authRequests.getCurrentUid();
   onSubmit(myTracker);
   this.setState({ newTrackerForm: defaultTrackerForm });
+  // const checkboxes = document.getElementsByClassName('form-check-input');
+  // for (let i = 0; i <= checkboxes.length; i + 1) {
+  //   checkboxes[i].checked = false;
+  // }
 }
 
 render() {
   const { newTrackerForm } = this.state;
+
   return (
       <div className="Form col">
         <h2>Form</h2>
-        <form className="row" onSubmit={this.formSubmit}>
+        <form className="row" id= "add-form" onSubmit={this.formSubmit} >
         <div className= "col-6">
           <div className="form-group row">
             <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
@@ -82,7 +88,7 @@ render() {
             value="tutorial"
             className="form-check-input"
             type="checkbox"
-            checked={this.state.trackerOption === 'tutorial'}
+            // checked={this.state.trackerOption === 'tutorial'}
             onChange={this.changeOption}
             /> Tutorial
             </label>
@@ -93,7 +99,7 @@ render() {
               className="form-check-input"
               type="checkbox"
               value="resources"
-              checked={this.state.trackerOption === 'resources'}
+              // checked={this.state.trackerOption === 'resources'}
               onChange={this.changeOption}
               /> Resources
             </label>
@@ -104,7 +110,7 @@ render() {
               className="form-check-input"
               type="checkbox"
               value="podcast"
-              checked={this.state.trackerOption === 'podcast'}
+              // checked={this.state.trackerOption === 'podcast'}
               onChange={this.changeOption}
               /> Podcasts
             </label>
@@ -115,7 +121,7 @@ render() {
             className="form-check-input"
             type="checkbox"
             value="blog"
-            checked={this.state.trackerOption === 'blog'}
+            // checked={this.state.trackerOption === 'blog'}
             onChange={this.changeOption}
             /> Blogs
             </label>
