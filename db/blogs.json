@@ -3,12 +3,14 @@
     "name":"Wes Bos",
     "url":"https://wesbos.com/blog/",
     "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
-    "type":"blog"
+    "type":"blog",
+    "isCompleted": false
   },
   "blog2" : {
     "name":"CodePen ",
     "url":"https://blog.codepen.io/",
     "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
-    "type":"blog"
+    "type":"blog",
+    "isCompleted": false
   }
 }

@@ -3,12 +3,14 @@
     "name":"Introduction to JavaScript",
     "url":"https://www.codecademy.com/learn/introduction-to-javascript",
     "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
-    "type":"tutorial"
+    "type":"tutorial",
+    "isCompleted": false
   },
   "tutorial2" : {
     "name":"React For Begginers",
     "url":"https://reactforbeginners.com/",
     "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
-    "type":"tutorial"
+    "type":"tutorial",
+    "isCompleted": false
   }
 }
