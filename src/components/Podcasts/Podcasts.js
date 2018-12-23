@@ -38,6 +38,10 @@ render() {
         <span className="col-4">{podcast.name}</span>
         <a href={podcast.url} className="col-4">{podcast.url}</a>
         {makeButtons()}
+        <div className="checkbox-div">
+          <input type="checkbox"/>
+          <label className="checkbox-label">Done!</label>
+      </div>
     </li>
   );
 }

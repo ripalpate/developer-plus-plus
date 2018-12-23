@@ -39,6 +39,10 @@ render() {
         <span className="col-4">{resource.name}</span>
         <a href={resource.url} className="col-4">{resource.url}</a>
         {makeButtons()}
+        <div className="checkbox-div">
+          <input type="checkbox"/>
+          <label className="checkbox-label">Done!</label>
+        </div>
       </li>
   );
 }

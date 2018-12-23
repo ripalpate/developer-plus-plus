@@ -38,6 +38,10 @@ render() {
       <span className="col-3">{tutorial.name}</span>
       <a href={tutorial.url} className="col-4">{tutorial.url}</a>
       {makeButtons()}
+      <div className="checkbox-div">
+          <input type="checkbox"/>
+          <label className="checkbox-label">Done!</label>
+      </div>
     </li>
   );
 }
