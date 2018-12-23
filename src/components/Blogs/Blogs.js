@@ -6,15 +6,29 @@ import authRequests from '../../helpers/data/authRequests';
 import trackerShape from '../../helpers/propz/trackerShape';
 
 class Blogs extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { value: '' };
+  // }
+
   static propTypes = {
     blog: trackerShape,
     deleteSingleBlog: PropTypes.func,
+    updateSingleBlog: PropTypes.func,
   }
 
 deleteEvent = (e) => {
   e.preventDefault();
   const { deleteSingleBlog, blog } = this.props;
   deleteSingleBlog(blog.id);
+}
+
+updateEvent = (e) => {
+  e.preventDefault();
+  const { updateSingleBlog, blog } = this.props;
+  const isCompleted = e.target.checked;
+  // this.setState({ value: e.target.value });
+  updateSingleBlog(blog.id, isCompleted);
 }
 
 render() {
@@ -39,6 +53,10 @@ render() {
         <span className="col-4">{blog.name}</span>
         <a href={blog.url} className="col-4">{blog.url}</a>
         {makeButtons()}
+        <div className="checkbox-div">
+          <input type="checkbox" value="blog" checked= {blog.isCompleted} id ={blog.id} onChange={this.updateEvent}/>
+          <label className="checkbox-label">Done!</label>
+      </div>
       </li>
   );
 }

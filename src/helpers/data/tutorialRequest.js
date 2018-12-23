@@ -23,8 +23,11 @@ const deleteTutorial = tutorialId => axios.delete(`${firebaseUrl}/tutorials/${tu
 
 const postRequest = tutorial => axios.post(`${firebaseUrl}/tutorials.json`, tutorial);
 
+const updateTutorial = (tutorialId, isCompleted) => axios.patch(`${firebaseUrl}/tutorials/${tutorialId}.json`, { isCompleted });
+
 export default {
   getTurtorialData,
   deleteTutorial,
   postRequest,
+  updateTutorial,
 };

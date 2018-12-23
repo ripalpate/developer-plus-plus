@@ -19,12 +19,20 @@ class ResourceTracker extends React.Component {
   static propTypes = {
     tutorials: PropTypes.arrayOf(trackerShape),
     deleteSingleTutorial: PropTypes.func,
+    updateSingleTutorial: PropTypes.func,
+    isCompleted: PropTypes.bool,
     resources: PropTypes.arrayOf(trackerShape),
     deleteSingleResource: PropTypes.func,
+    updateSingleResource: PropTypes.func,
+    isCompletedRes: PropTypes.bool,
     blogs: PropTypes.arrayOf(trackerShape),
     deleteSingleBlog: PropTypes.func,
+    updateSingleBlog: PropTypes.func,
+    isCompletedBlog: PropTypes.bool,
     podcasts: PropTypes.arrayOf(trackerShape),
     deleteSinglePodcast: PropTypes.func,
+    updateSinglePodcast: PropTypes.func,
+    isCompletedPodcast: PropTypes.bool,
   }
 
   constructor(props) {
@@ -45,36 +53,65 @@ class ResourceTracker extends React.Component {
   }
 
   render() {
-    const { tutorials, deleteSingleTutorial } = this.props;
+    const {
+      tutorials,
+      deleteSingleTutorial,
+      updateSingleTutorial,
+      isCompleted,
+    } = this.props;
     const tutorialsItemComponent = tutorials.map(tutorial => (
       <Tutorials
       tutorial = {tutorial}
       key={tutorial.id}
       deleteSingleTutorial = {deleteSingleTutorial}
+      updateSingleTutorial = {updateSingleTutorial}
+      isCompleted = {isCompleted}
       />
     ));
-    const { resources, deleteSingleResource } = this.props;
+    const {
+      resources,
+      deleteSingleResource,
+      updateSingleResource,
+      isCompletedRes,
+    } = this.props;
     const resourcesItemCompent = resources.map(resource => (
       <Resources
       resource = {resource}
       key={resource.id}
       deleteSingleResource = {deleteSingleResource}
+      updateSingleResource = {updateSingleResource}
+      isCompletedRes = {isCompletedRes}
       />
     ));
-    const { blogs, deleteSingleBlog } = this.props;
+    const {
+      blogs,
+      deleteSingleBlog,
+      updateSingleBlog,
+      isCompletedBlog,
+    } = this.props;
     const blogsItemComponent = blogs.map(blog => (
       <Blogs
       blog = {blog}
       key={blog.id}
       deleteSingleBlog = {deleteSingleBlog}
+      updateSingleBlog= {updateSingleBlog}
+      isCompletedBlog = {isCompletedBlog}
+
       />
     ));
-    const { podcasts, deleteSinglePodcast } = this.props;
+    const {
+      podcasts,
+      deleteSinglePodcast,
+      updateSinglePodcast,
+      isCompletedPodcast,
+    } = this.props;
     const podcastsItemComponent = podcasts.map(podcast => (
       <Podcasts
       podcast = {podcast}
       key={podcast.id}
       deleteSinglePodcast = {deleteSinglePodcast}
+      updateSinglePodcast = {updateSinglePodcast}
+      isCompletedPodcast = {isCompletedPodcast}
       />
     ));
     return (

@@ -106,6 +106,30 @@ deleteTutorial = (tutorialId) => {
     .catch(err => console.error(err));
 }
 
+updateTutorial = (tutorialId, isCompleted) => {
+  tutorialRequest.updateTutorial(tutorialId, isCompleted)
+    .then(() => {
+      tutorialRequest.getTurtorialData()
+        .then((tutorials) => {
+          tutorials.sort((x, y) => x.isCompleted - y.isCompleted);
+          this.setState({ tutorials });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
+updateResource = (resourceId, isCompleted) => {
+  resourcesRequest.updateResource(resourceId, isCompleted)
+    .then(() => {
+      resourcesRequest.getResourceData()
+        .then((resources) => {
+          resources.sort((x, y) => x.isCompleted - y.isCompleted);
+          this.setState({ resources });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
 deleteResource = (resourceId) => {
   resourcesRequest.deleteResource(resourceId)
     .then(() => {
@@ -117,12 +141,36 @@ deleteResource = (resourceId) => {
     .catch(err => console.error(err));
 }
 
+updateBlog = (blogId, isCompleted) => {
+  blogRequest.updateBlog(blogId, isCompleted)
+    .then(() => {
+      blogRequest.getBlogData()
+        .then((blogs) => {
+          blogs.sort((x, y) => x.isCompleted - y.isCompleted);
+          this.setState({ blogs });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
 deleteBlog = (blogId) => {
   blogRequest.deleteBlogData(blogId)
     .then(() => {
       blogRequest.getBlogData()
         .then((blogs) => {
           this.setState({ blogs });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
+updatePodcast = (podcastId, isCompleted) => {
+  podcastRequest.updatePodcast(podcastId, isCompleted)
+    .then(() => {
+      podcastRequest.getPodcastData()
+        .then((podcasts) => {
+          podcasts.sort((x, y) => x.isCompleted - y.isCompleted);
+          this.setState({ podcasts });
         });
     })
     .catch(err => console.error(err));
@@ -207,12 +255,16 @@ render() {
           <ResourceTracker
           tutorials = {this.state.tutorials}
           deleteSingleTutorial = {this.deleteTutorial}
+          updateSingleTutorial = {this.updateTutorial}
           resources = {this.state.resources}
           deleteSingleResource = {this.deleteResource}
+          updateSingleResource = {this.updateResource}
           blogs = {this.state.blogs}
           deleteSingleBlog = {this.deleteBlog}
+          updateSingleBlog = {this.updateBlog}
           podcasts = {this.state.podcasts}
           deleteSinglePodcast = {this.deletePodcast}
+          updateSinglePodcast = {this.updatePodcast}
           />
         </div>
         </div>
