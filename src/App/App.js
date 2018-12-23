@@ -141,6 +141,18 @@ deleteResource = (resourceId) => {
     .catch(err => console.error(err));
 }
 
+updateBlog = (blogId, isCompleted) => {
+  blogRequest.updateBlog(blogId, isCompleted)
+    .then(() => {
+      blogRequest.getBlogData()
+        .then((blogs) => {
+          blogs.sort((x, y) => x.isCompleted - y.isCompleted);
+          this.setState({ blogs });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
 deleteBlog = (blogId) => {
   blogRequest.deleteBlogData(blogId)
     .then(() => {
@@ -237,6 +249,7 @@ render() {
           updateSingleResource = {this.updateResource}
           blogs = {this.state.blogs}
           deleteSingleBlog = {this.deleteBlog}
+          updateSingleBlog = {this.updateBlog}
           podcasts = {this.state.podcasts}
           deleteSinglePodcast = {this.deletePodcast}
           />
