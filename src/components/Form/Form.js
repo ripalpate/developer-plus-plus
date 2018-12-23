@@ -89,25 +89,43 @@ render() {
           </div>
           <div className="form-check">
             <label className="form-check-label">
-            <input className="form-check-input" type="checkbox"/> Resources
+            <input
+              className="form-check-input"
+              type="checkbox"
+              value="resources"
+              checked={this.state.trackerOption === 'resources'}
+              onChange={this.changeOption}
+              /> Resources
             </label>
           </div>
           <div className="form-check">
             <label className="form-check-label">
-            <input className="form-check-input" type="checkbox"/> Podcasts
+            <input
+              className="form-check-input"
+              type="checkbox"
+              value="podcast"
+              checked={this.state.trackerOption === 'podcast'}
+              onChange={this.changeOption}
+              /> Podcasts
             </label>
           </div>
           <div className="form-check">
             <label className="form-check-label">
-            <input className="form-check-input" type="checkbox"/> Blogs
+            <input
+            className="form-check-input"
+            type="checkbox"
+            value="blog"
+            checked={this.state.trackerOption === 'blog'}
+            onChange={this.changeOption}
+            /> Blogs
             </label>
           </div>
           </div>
           <button type="submit" className="btn btn-primary col-1">Submit</button>
         </form>
       </div>
-    );
-  }
+  );
+}
 }
 
 export default Form;

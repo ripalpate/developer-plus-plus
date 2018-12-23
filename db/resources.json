@@ -2,11 +2,13 @@
   "resource1" : {
     "name":"Smarter Way to learn Javascript",
     "url":"http://www.asmarterwaytolearn.com/js/",
-    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32"
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type": "resources"
   },
   "resource2" : {
     "name":"JavaScript for Kids",
     "url":"https://pepa.holla.cz/wp-content/uploads/2015/11/JavaScript-for-Kids.pdf",
-    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32"
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type": "resources"
   }
 }

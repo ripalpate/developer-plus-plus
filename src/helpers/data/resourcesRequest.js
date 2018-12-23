@@ -20,8 +20,10 @@ const getResourceData = () => new Promise((resolve, reject) => {
 });
 
 const deleteResource = resourceId => axios.delete(`${firebaseUrl}/resources/${resourceId}.json`);
+const postResource = resource => axios.post(`${firebaseUrl}/resources.json`, resource);
 
 export default {
   getResourceData,
   deleteResource,
+  postResource,
 };
