@@ -20,6 +20,7 @@ class ResourceTracker extends React.Component {
     tutorials: PropTypes.arrayOf(trackerShape),
     deleteSingleTutorial: PropTypes.func,
     updateSingleTutorial: PropTypes.func,
+    isCompleted: PropTypes.bool,
     resources: PropTypes.arrayOf(trackerShape),
     deleteSingleResource: PropTypes.func,
     updateSingleResource: PropTypes.func,
@@ -30,7 +31,8 @@ class ResourceTracker extends React.Component {
     isCompletedBlog: PropTypes.bool,
     podcasts: PropTypes.arrayOf(trackerShape),
     deleteSinglePodcast: PropTypes.func,
-    isCompleted: PropTypes.bool,
+    updateSinglePodcast: PropTypes.func,
+    isCompletedPodcast: PropTypes.bool,
   }
 
   constructor(props) {
@@ -97,12 +99,19 @@ class ResourceTracker extends React.Component {
 
       />
     ));
-    const { podcasts, deleteSinglePodcast } = this.props;
+    const {
+      podcasts,
+      deleteSinglePodcast,
+      updateSinglePodcast,
+      isCompletedPodcast,
+    } = this.props;
     const podcastsItemComponent = podcasts.map(podcast => (
       <Podcasts
       podcast = {podcast}
       key={podcast.id}
       deleteSinglePodcast = {deleteSinglePodcast}
+      updateSinglePodcast = {updateSinglePodcast}
+      isCompletedPodcast = {isCompletedPodcast}
       />
     ));
     return (

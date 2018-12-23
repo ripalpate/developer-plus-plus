@@ -6,6 +6,11 @@ import authRequests from '../../helpers/data/authRequests';
 import trackerShape from '../../helpers/propz/trackerShape';
 
 class Tutorials extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
+  }
+
   static propTypes = {
     tutorial: trackerShape,
     deleteSingleTutorial: PropTypes.func,
@@ -53,7 +58,7 @@ render() {
       <a href={tutorial.url} className="col-4">{tutorial.url}</a>
       {makeButtons()}
       <div className="checkbox-div">
-          <input type="checkbox" checked={tutorial.isCompleted} id={tutorial.id} onChange={this.updateEvent}/>
+          <input type="checkbox" value={this.state.value} checked={tutorial.isCompleted} id={tutorial.id} onChange={this.updateEvent}/>
           <label className="checkbox-label">Done!</label>
       </div>
     </li>

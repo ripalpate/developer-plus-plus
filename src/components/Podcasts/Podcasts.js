@@ -5,15 +5,28 @@ import trackerShape from '../../helpers/propz/trackerShape';
 import authRequests from '../../helpers/data/authRequests';
 
 class Podcasts extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
+  }
+
   static propTypes = {
     podcast: trackerShape,
     deleteSinglePodcast: PropTypes.func,
+    updateSinglePodcast: PropTypes.func,
   }
 
 deleteEvent = (e) => {
   e.preventDefault();
   const { deleteSinglePodcast, podcast } = this.props;
   deleteSinglePodcast(podcast.id);
+}
+
+updateEvent = (e) => {
+  e.preventDefault();
+  const { updateSinglePodcast, podcast } = this.props;
+  const isCompleted = e.target.checked;
+  updateSinglePodcast(podcast.id, isCompleted);
 }
 
 render() {
@@ -39,7 +52,7 @@ render() {
         <a href={podcast.url} className="col-4">{podcast.url}</a>
         {makeButtons()}
         <div className="checkbox-div">
-          <input type="checkbox"/>
+          <input type="checkbox" value= {this.state.value} checked={podcast.isCompleted} id={podcast.id} onChange={this.updateEvent}/>
           <label className="checkbox-label">Done!</label>
       </div>
     </li>

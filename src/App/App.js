@@ -164,6 +164,18 @@ deleteBlog = (blogId) => {
     .catch(err => console.error(err));
 }
 
+updatePodcast = (podcastId, isCompleted) => {
+  podcastRequest.updatePodcast(podcastId, isCompleted)
+    .then(() => {
+      podcastRequest.getPodcastData()
+        .then((podcasts) => {
+          podcasts.sort((x, y) => x.isCompleted - y.isCompleted);
+          this.setState({ podcasts });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
 deletePodcast = (podcastId) => {
   podcastRequest.deletePodcastData(podcastId)
     .then(() => {
@@ -252,6 +264,7 @@ render() {
           updateSingleBlog = {this.updateBlog}
           podcasts = {this.state.podcasts}
           deleteSinglePodcast = {this.deletePodcast}
+          updateSinglePodcast = {this.updatePodcast}
           />
         </div>
         </div>

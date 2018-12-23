@@ -6,6 +6,11 @@ import trackerShape from '../../helpers/propz/trackerShape';
 
 
 class Resources extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
+  }
+
   static propTypes = {
     resource: trackerShape,
     deleteSingleResource: PropTypes.func,
@@ -48,7 +53,7 @@ render() {
         <a href={resource.url} className="col-4">{resource.url}</a>
         {makeButtons()}
         <div className="checkbox-div">
-          <input type="checkbox" checked={resource.isCompleted} id={resource.id} onChange={this.updateEvent}/>
+          <input type="checkbox" value={this.state.value} checked={resource.isCompleted} id={resource.id} onChange={this.updateEvent}/>
           <label className="checkbox-label">Done!</label>
         </div>
       </li>
