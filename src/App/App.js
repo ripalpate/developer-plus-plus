@@ -106,6 +106,18 @@ deleteTutorial = (tutorialId) => {
     .catch(err => console.error(err));
 }
 
+updateTutorial = (tutorialId, isCompleted) => {
+  tutorialRequest.updateTutorial(tutorialId, isCompleted)
+    .then(() => {
+      tutorialRequest.getTurtorialData()
+        .then((tutorials) => {
+          tutorials.sort((x, y) => x.isCompleted - y.isCompleted);
+          this.setState({ tutorials });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
 deleteResource = (resourceId) => {
   resourcesRequest.deleteResource(resourceId)
     .then(() => {
@@ -207,6 +219,7 @@ render() {
           <ResourceTracker
           tutorials = {this.state.tutorials}
           deleteSingleTutorial = {this.deleteTutorial}
+          updateSingleTutorial = {this.updateTutorial}
           resources = {this.state.resources}
           deleteSingleResource = {this.deleteResource}
           blogs = {this.state.blogs}
