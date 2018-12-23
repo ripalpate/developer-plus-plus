@@ -2,11 +2,13 @@
   "blog1" : {
     "name":"Wes Bos",
     "url":"https://wesbos.com/blog/",
-    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32"
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"blog"
   },
   "blog2" : {
     "name":"CodePen ",
     "url":"https://blog.codepen.io/",
-    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32"
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"blog"
   }
 }

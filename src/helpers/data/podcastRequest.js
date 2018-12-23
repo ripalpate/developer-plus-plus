@@ -21,7 +21,10 @@ const getPodcastData = () => new Promise((resolve, reject) => {
 
 const deletePodcastData = podcastId => axios.delete(`${firebaseUrl}/podcasts/${podcastId}.json`);
 
+const postPodcast = podcast => axios.post(`${firebaseUrl}/podcasts.json`, podcast);
+
 export default {
   getPodcastData,
   deletePodcastData,
+  postPodcast,
 };

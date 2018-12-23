@@ -139,6 +139,46 @@ deletePodcast = (podcastId) => {
     .catch(err => console.error(err));
 }
 
+formSubmitEvent = (newResource) => {
+  if (newResource.type === 'tutorial') {
+    tutorialRequest.postRequest(newResource)
+      .then(() => {
+        tutorialRequest.getTurtorialData()
+          .then((tutorials) => {
+            this.setState({ tutorials });
+          });
+      })
+      .catch(err => console.error(err));
+  } else if (newResource.type === 'resources') {
+    resourcesRequest.postResource(newResource)
+      .then(() => {
+        resourcesRequest.getResourceData()
+          .then((resources) => {
+            this.setState({ resources });
+          });
+      })
+      .catch(err => console.error(err));
+  } else if (newResource.type === 'blog') {
+    blogRequest.postBlog(newResource)
+      .then(() => {
+        blogRequest.getBlogData()
+          .then((blogs) => {
+            this.setState({ blogs });
+          });
+      })
+      .catch(err => console.error(err));
+  } else if (newResource.type === 'podcast') {
+    podcastRequest.postPodcast(newResource)
+      .then(() => {
+        podcastRequest.getPodcastData()
+          .then((podcasts) => {
+            this.setState({ podcasts });
+          });
+      })
+      .catch(err => console.error(err));
+  }
+}
+
 render() {
   const logoutClickEvent = () => {
     authRequests.logoutUser();
@@ -163,7 +203,7 @@ render() {
           <Profile profile={this.state.profile}/>
         </div>
         <div className="col-9 align-self-start">
-          <Form><h2>Form</h2></Form>
+          <Form onSubmit={this.formSubmitEvent}/>
           <ResourceTracker
           tutorials = {this.state.tutorials}
           deleteSingleTutorial = {this.deleteTutorial}
