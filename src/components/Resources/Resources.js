@@ -9,12 +9,20 @@ class Resources extends React.Component {
   static propTypes = {
     resource: trackerShape,
     deleteSingleResource: PropTypes.func,
+    updateSingleResource: PropTypes.func,
   }
 
 deleteEvent = (e) => {
   e.preventDefault();
   const { deleteSingleResource, resource } = this.props;
   (deleteSingleResource(resource.id));
+}
+
+updateEvent = (e) => {
+  e.preventDefault();
+  const { updateSingleResource, resource } = this.props;
+  const isCompleted = e.target.checked;
+  updateSingleResource(resource.id, isCompleted);
 }
 
 render() {
@@ -40,7 +48,7 @@ render() {
         <a href={resource.url} className="col-4">{resource.url}</a>
         {makeButtons()}
         <div className="checkbox-div">
-          <input type="checkbox"/>
+          <input type="checkbox" checked={resource.isCompleted} id={resource.id} onChange={this.updateEvent}/>
           <label className="checkbox-label">Done!</label>
         </div>
       </li>

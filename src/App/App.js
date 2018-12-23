@@ -118,6 +118,18 @@ updateTutorial = (tutorialId, isCompleted) => {
     .catch(err => console.error(err));
 }
 
+updateResource = (resourceId, isCompleted) => {
+  resourcesRequest.updateResource(resourceId, isCompleted)
+    .then(() => {
+      resourcesRequest.getResourceData()
+        .then((resources) => {
+          resources.sort((x, y) => x.isCompleted - y.isCompleted);
+          this.setState({ resources });
+        });
+    })
+    .catch(err => console.error(err));
+}
+
 deleteResource = (resourceId) => {
   resourcesRequest.deleteResource(resourceId)
     .then(() => {
@@ -222,6 +234,7 @@ render() {
           updateSingleTutorial = {this.updateTutorial}
           resources = {this.state.resources}
           deleteSingleResource = {this.deleteResource}
+          updateSingleResource = {this.updateResource}
           blogs = {this.state.blogs}
           deleteSingleBlog = {this.deleteBlog}
           podcasts = {this.state.podcasts}
