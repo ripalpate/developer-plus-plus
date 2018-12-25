@@ -38,6 +38,13 @@ class App extends Component {
           })
           .catch(err => console.error(err));
       }
+      if (this.state.githubUsername && this.state.profile.length === 0) {
+        profileRequest.getUserCommit(this.state.githubUsername)
+          .then((commits) => {
+            this.setState({ commits });
+          })
+          .catch(err => console.error(err));
+      }
     }
 
     componentDidMount() {
@@ -248,7 +255,10 @@ render() {
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
         <div className="row">
         <div className="col-3 align-self-start">
-          <Profile profile={this.state.profile}/>
+          <Profile
+          profile={this.state.profile}
+          commits={this.state.commits}
+          />
         </div>
         <div className="col-9 align-self-start">
           <Form onSubmit={this.formSubmitEvent}/>
