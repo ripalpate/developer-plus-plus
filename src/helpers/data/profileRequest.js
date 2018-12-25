@@ -17,12 +17,14 @@ const getUserCommit = githubUsername => new Promise((resolve, reject) => {
   axios
     .get(`https://api.github.com/users/${githubUsername}/events/public`)
     .then((result) => {
-      // console.log(result.data);
-      // let commitsCount = 0;
-      let pushEvent = result.data.filter(event => event.type === 'PushEvent');
-      pushEvent = pushEvent.slice(0, 5);
-      // commitsCount += pushEvent.payload.commits;
-      console.log(pushEvent);
+      let totalCommits = 0;
+      const pushEvents = result.data.filter(event => event.type === 'PushEvent');
+      // pushEvents = pushEvents.slice(0, 5);
+      // console.log(pushEvents);
+      pushEvents.forEach((pushEvent) => {
+        totalCommits += pushEvent.payload.commits.length;
+      });
+      resolve(totalCommits);
     })
     .catch(err => reject(err));
 });

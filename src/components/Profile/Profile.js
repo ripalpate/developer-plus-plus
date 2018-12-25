@@ -13,7 +13,11 @@ class Profile extends React.Component {
           <h2 className="card-title">{profile.login}</h2>
           <p className="card-text">{profile.bio}</p>
           <a href={profile.html_url} className="_blank">https://github.com/ripalpate</a>
-          <h1>{commits}</h1>
+          <br/>
+          <br/>
+          <h2>{commits}</h2>
+          <h6>commits</h6>
+          <p>in the last 5 days</p>
         </div>
       </div>
     );
