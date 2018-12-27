@@ -50,8 +50,7 @@ render() {
   const { newTrackerForm } = this.state;
 
   return (
-      <div className="Form col">
-        <h2>Form</h2>
+      <div className="form col">
         <form className="row" id= "add-form" onSubmit={this.formSubmit} >
         <div className= "col-6">
           <div className="form-group row">
@@ -127,7 +126,7 @@ render() {
             </label>
           </div>
           </div>
-          <button type="submit" className="btn btn-primary col-1">Submit</button>
+          <button type="submit" className="btn btn-primary col-1 add-button">+</button>
         </form>
       </div>
   );

@@ -12,5 +12,47 @@
     "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
     "type":"blog",
     "isCompleted": false
+  },
+  "blog3" : {
+    "name":"Animated Smiley Face With HTML And CSS",
+    "url":"https://html-online.com/articles/html-css-keyframes-animated-head-drawing/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"blog",
+    "isCompleted": false
+  },
+  "blog4" : {
+    "name":"Daily JS ",
+    "url":"https://medium.com/dailyjs",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"blog",
+    "isCompleted": false
+  },
+  "blog5" : {
+    "name":"SuperHero JS",
+    "url":"http://superherojs.com/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"blog",
+    "isCompleted": false
+  },
+  "blog6" : {
+    "name":"Learning Javascript",
+    "url":"https://www.sitepoint.com/javascript/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"blog",
+    "isCompleted": false
+  },
+  "blog7" : {
+    "name":"BRENDAN EICH",
+    "url":"https://brendaneich.com/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"blog",
+    "isCompleted": false
+  },
+  "blog8" : {
+    "name":"CodePen ",
+    "url":"https://blog.codepen.io/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"blog",
+    "isCompleted": false
   }
 }

@@ -12,5 +12,47 @@
     "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
     "type": "resources",
     "isCompleted": false
+  },
+  "resource3" : {
+    "name":"How to Learn React",
+    "url":"https://medium.freecodecamp.org",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type": "resources",
+    "isCompleted": false
+  },
+  "resource4" : {
+    "name":"HTML CheatSheet",
+    "url":"https://digital.com/tools/html-cheatsheet/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type": "resources",
+    "isCompleted": false
+  }, 
+  "resource5" : {
+    "name":"CSS CheatSheet",
+    "url":"https://www.onblastblog.com/css3-cheat-sheet/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type": "resources",
+    "isCompleted": false
+  },
+  "resource6" : {
+    "name":"CSS Tricks",
+    "url":"https://css-tricks.com/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type": "resources",
+    "isCompleted": false
+  },
+  "resource7" : {
+    "name":"HTML Code Generator",
+    "url":"https://html-css-js.com/html/generator/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type": "resources",
+    "isCompleted": false
+  },
+  "resource8" : {
+    "name":"JS CheatSheet",
+    "url":"https://htmlcheatsheet.com/js/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type": "resources",
+    "isCompleted": false
   }
 }

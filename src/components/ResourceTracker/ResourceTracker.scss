@@ -1,4 +1,12 @@
 .Resource {
-  height: 60vh;
+  height: 80vh;
   overflow: scroll;
+}
+.nav-tabs {
+  border-bottom: 1px solid rgb(92, 87, 87);
+}
+.nav-tabs .nav-link.active {
+  background-color: rgb(212, 208, 208);
+  border-color: none;
+  border-bottom: 1px solid rgb(212, 208, 208);
 }
