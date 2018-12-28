@@ -50,7 +50,7 @@ render() {
   return (
       <li className="resource-item row">
         <span className="col-4">{resource.name}</span>
-        <a href={resource.url} className="col-4">{resource.url}</a>
+        <a href={resource.url} target="_blank" rel="noreferrer noopener" className="col-4">{resource.url}</a>
         {makeButtons()}
         <div className="checkbox-div">
           <input type="checkbox" value={this.state.value} checked={resource.isCompleted} id={resource.id} onChange={this.updateEvent}/>
