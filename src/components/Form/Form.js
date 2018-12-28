@@ -13,7 +13,6 @@ const defaultTrackerForm = {
 class Form extends React.Component {
   state = {
     newTrackerForm: defaultTrackerForm,
-    trackerOption: '',
   }
 
 formFieldStringState = (name, e) => {
@@ -50,8 +49,7 @@ render() {
   const { newTrackerForm } = this.state;
 
   return (
-      <div className="Form col">
-        <h2>Form</h2>
+      <div className="form col">
         <form className="row" id= "add-form" onSubmit={this.formSubmit} >
         <div className= "col-6">
           <div className="form-group row">
@@ -88,7 +86,6 @@ render() {
             value="tutorial"
             className="form-check-input"
             type="checkbox"
-            // checked={this.state.trackerOption === 'tutorial'}
             onChange={this.changeOption}
             /> Tutorial
             </label>
@@ -99,7 +96,6 @@ render() {
               className="form-check-input"
               type="checkbox"
               value="resources"
-              // checked={this.state.trackerOption === 'resources'}
               onChange={this.changeOption}
               /> Resources
             </label>
@@ -110,7 +106,6 @@ render() {
               className="form-check-input"
               type="checkbox"
               value="podcast"
-              // checked={this.state.trackerOption === 'podcast'}
               onChange={this.changeOption}
               /> Podcasts
             </label>
@@ -121,13 +116,14 @@ render() {
             className="form-check-input"
             type="checkbox"
             value="blog"
-            // checked={this.state.trackerOption === 'blog'}
             onChange={this.changeOption}
             /> Blogs
             </label>
           </div>
           </div>
-          <button type="submit" className="btn btn-primary col-1">Submit</button>
+          <div className="col-2">
+          <button type="submit" className="btn btn-primary col-1 add-button">+</button>
+          </div>
         </form>
       </div>
   );

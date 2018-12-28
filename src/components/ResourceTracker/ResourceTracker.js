@@ -116,7 +116,6 @@ class ResourceTracker extends React.Component {
     ));
     return (
       <div className="Resource col">
-        <h2>Resource Tracker</h2>
         <div>
         <Nav tabs>
           <NavItem>
@@ -137,18 +136,18 @@ class ResourceTracker extends React.Component {
           </NavItem>
           <NavItem>
             <NavLink
-              className={classnames({ active: this.state.activeTab === '2' })}
+              className={classnames({ active: this.state.activeTab === '3' })}
               onClick={() => { this.toggle('3'); }}
             >
-              Blogs
+              Podcasts
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink
-              className={classnames({ active: this.state.activeTab === '2' })}
+              className={classnames({ active: this.state.activeTab === '4' })}
               onClick={() => { this.toggle('4'); }}
             >
-              Podcasts
+              Blogs
             </NavLink>
           </NavItem>
         </Nav>
@@ -160,10 +159,10 @@ class ResourceTracker extends React.Component {
             <ul>{resourcesItemCompent}</ul>
           </TabPane>
           <TabPane tabId="3">
-            <ul>{blogsItemComponent}</ul>
+            <ul>{podcastsItemComponent}</ul>
           </TabPane>
           <TabPane tabId="4">
-            <ul>{podcastsItemComponent}</ul>
+            <ul>{blogsItemComponent}</ul>
           </TabPane>
         </TabContent>
       </div>

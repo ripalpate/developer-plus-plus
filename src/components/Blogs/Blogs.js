@@ -51,7 +51,7 @@ render() {
   return (
       <li className="blog-item row">
         <span className="col-4">{blog.name}</span>
-        <a href={blog.url} className="col-4">{blog.url}</a>
+        <a href={blog.url} target="_blank" rel="noreferrer noopener" className="col-4">{blog.url}</a>
         {makeButtons()}
         <div className="checkbox-div">
           <input type="checkbox" value="blog" checked= {blog.isCompleted} id ={blog.id} onChange={this.updateEvent}/>

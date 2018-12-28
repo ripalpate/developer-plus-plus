@@ -12,5 +12,47 @@
     "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
     "type":"podcast",
     "isCompleted": false
+  },
+  "podcast3" : {
+    "name":"Shop Talk Show",
+    "url":"https://shoptalkshow.com/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"podcast",
+    "isCompleted": false
+  },
+  "podcast4" : {
+    "name":"Front End Happy Hour",
+    "url":"https://frontendhappyhour.com/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"podcast",
+    "isCompleted": false
+  },
+  "podcast5" : {
+    "name":"The Web Platform",
+    "url":"https://thewebplatformpodcast.com/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"podcast",
+    "isCompleted": false
+  },
+  "podcast6" : {
+    "name":"Codepen Radio",
+    "url":"https://blog.codepen.io/radio/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"podcast",
+    "isCompleted": false
+  },
+  "podcast7" : {
+    "name":"Dev Ops Cafe",
+    "url":"http://devopscafe.org/show",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"podcast",
+    "isCompleted": false
+  },
+  "podcast8" : {
+    "name":".NET Rocks",
+    "url":"https://www.dotnetrocks.com/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"podcast",
+    "isCompleted": false
   }
 }

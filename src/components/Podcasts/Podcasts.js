@@ -49,7 +49,7 @@ render() {
   return (
       <li className="podcast-item row">
         <span className="col-4">{podcast.name}</span>
-        <a href={podcast.url} className="col-4">{podcast.url}</a>
+        <a href={podcast.url} target="_blank" rel="noreferrer noopener" className="col-4">{podcast.url}</a>
         {makeButtons()}
         <div className="checkbox-div">
           <input type="checkbox" value= {this.state.value} checked={podcast.isCompleted} id={podcast.id} onChange={this.updateEvent}/>

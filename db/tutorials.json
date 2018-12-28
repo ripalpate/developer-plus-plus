@@ -12,5 +12,47 @@
     "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
     "type":"tutorial",
     "isCompleted": false
+  },
+  "tutorial3" : {
+    "name":"Learn JS",
+    "url":"https://www.learn-js.org/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"tutorial",
+    "isCompleted": false
+  },
+  "tutorial4" : {
+    "name":"Learn JavaScript",
+    "url":"https://www.w3schools.com/js/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"tutorial",
+    "isCompleted": false
+  },
+  "tutorial5" : {
+    "name":"Modern Javascript",
+    "url":"https://javascript.info/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"tutorial",
+    "isCompleted": false
+  },
+  "tutorial6" : {
+    "name":"Learn CSS",
+    "url":"https://www.codecademy.com/learn/learn-css",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"tutorial",
+    "isCompleted": false
+  },
+  "tutorial7" : {
+    "name":"CSS Tutorial",
+    "url":"https://www.csstutorial.net/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"tutorial",
+    "isCompleted": false
+  },
+  "tutorial8" : {
+    "name":"Learn Jquery",
+    "url":"https://learn.jquery.com/",
+    "uid":"cvFpi5IGL5UFxuTA6h37rraNQk32",
+    "type":"tutorial",
+    "isCompleted": false
   }
 }

@@ -55,7 +55,7 @@ render() {
   return (
     <li className="tutorial-item  row">
       <span className="col-3">{tutorial.name}</span>
-      <a href={tutorial.url} className="col-4">{tutorial.url}</a>
+      <a href={tutorial.url} target="_blank" rel="noreferrer noopener" className="col-4">{tutorial.url}</a>
       {makeButtons()}
       <div className="checkbox-div">
           <input type="checkbox" value={this.state.value} checked={tutorial.isCompleted} id={tutorial.id} onChange={this.updateEvent}/>
