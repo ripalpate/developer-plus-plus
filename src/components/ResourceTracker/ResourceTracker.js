@@ -116,7 +116,6 @@ class ResourceTracker extends React.Component {
     ));
     return (
       <div className="Resource col">
-        <div>
         <Nav tabs>
           <NavItem>
             <NavLink
@@ -165,7 +164,6 @@ class ResourceTracker extends React.Component {
             <ul>{blogsItemComponent}</ul>
           </TabPane>
         </TabContent>
-      </div>
       </div>
     );
   }
