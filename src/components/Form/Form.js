@@ -8,6 +8,7 @@ const defaultTrackerForm = {
   url: '',
   uid: '',
   type: '',
+  isCompleted: false,
 };
 
 class Form extends React.Component {
@@ -32,6 +33,13 @@ changeOption = (e) => {
   this.setState({ newTrackerForm: tempTracker });
 }
 
+uncheck = () => {
+  const checkboxes = document.getElementsByClassName('form-check-input');
+  for (let i = 0; i <= checkboxes.length; i + 1) {
+    checkboxes[i].checked = false;
+  }
+}
+
 formSubmit = (e) => {
   e.preventDefault();
   const { onSubmit } = this.props;
@@ -50,7 +58,7 @@ render() {
 
   return (
       <div className="form col">
-        <form className="row" id= "add-form" onSubmit={this.formSubmit} >
+        <form className="row" id= "add-form" onSubmit={this.formSubmit}>
         <div className= "col-6">
           <div className="form-group row">
             <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
