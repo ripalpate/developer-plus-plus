@@ -38,7 +38,7 @@ render() {
       return (
           <div className="col-2 button-res">
             <span className="col">
-              <button className="btn btn-default" onClick={this.deleteEvent}>
+              <button className="btn btn-danger" onClick={this.deleteEvent}>
                 <i className="fas fa-trash-alt"></i>
               </button>
             </span>

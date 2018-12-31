@@ -1,8 +1,6 @@
+@import '../../styles/variables';
 .resource-item {
-  border-bottom: 1px solid rgb(92, 87, 87);;
-  cursor: pointer;
-  padding: 10px;
-  margin-bottom: 5px;
+  @include default-resources();
 }
 .button-res {
   margin-left: 50px !important;
