@@ -1,4 +1,6 @@
 @import '../styles/variables';
 body {
-  background-color:$backgroundColor;
+  // background-color:$backgroundColor;
+  background-image: $backgroundImage;
+  background-size: cover;
 }

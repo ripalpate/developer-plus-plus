@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 .resource-item {
   @include default-resources();
+  font-family: $contentFont;
 }
 .button-res {
   margin-left: 50px !important;

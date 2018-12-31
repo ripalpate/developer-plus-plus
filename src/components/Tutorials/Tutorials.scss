@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 .tutorial-item {
   @include default-resources();
+  font-family: $contentFont;
 }
 .button {
   margin-left: 150px;

@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Domine|Fredericka+the+Great|Righteous');
+
 $backgroundColor: #EBB;
+$backgroundImage: url('https://www.xmple.com/wallpaper/orange-pink-gradient-linear-1920x1080-c2-ff69b4-ff7f50-a-210-f-14.svg');
 $lightAqua:  rgb(153, 236, 211);
 $offwhite: rgba(255, 255, 255, 0.938);
+
+$logoFont: 'Fredericka the Great', cursive;
+$rscFont:'Righteous', cursive;
+$contentFont:'Domine', serif;
 
 @mixin default-resources () {
   background: $lightAqua;

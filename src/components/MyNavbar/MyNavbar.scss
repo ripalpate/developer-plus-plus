@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+.navbar-brand {
+  font-family: $logoFont;
+  font-size: 1.5em;
+}
+.nav-link {
+  font-family: $contentFont;
+  font-size: 1.25em;
+}
