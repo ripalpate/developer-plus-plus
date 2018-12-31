@@ -1,6 +1,8 @@
+@import '../../styles/variables';
 .card {
   box-shadow: 7px 7px 2px 1px rgba(95, 95, 102, 0.2);
   text-align: center;
+  background: $lightAqua;
 }
 .profile {
   margin: 30px 0px;

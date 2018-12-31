@@ -1,5 +1,12 @@
+@import '../../styles/variables';
+
 .form {
   margin:40px 10px;
+  border: 2px solid white;
+  padding: 20px;
+  background:$lightAqua;
+  border-radius: 5px;
+  max-width:800px;
 }
 .add-button {
   max-height: 50px;
