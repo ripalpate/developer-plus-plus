@@ -34,23 +34,18 @@ changeOption = (e) => {
 }
 
 uncheck = () => {
-  const checkboxes = document.getElementsByClassName('form-check-input');
-  for (let i = 0; i <= checkboxes.length; i + 1) {
-    checkboxes[i].checked = false;
-  }
+  document.querySelectorAll('.form-check-input:checked')[0].checked = false;
 }
 
+
 formSubmit = (e) => {
+  this.uncheck();
   e.preventDefault();
   const { onSubmit } = this.props;
   const myTracker = { ...this.state.newTrackerForm };
   myTracker.uid = authRequests.getCurrentUid();
   onSubmit(myTracker);
   this.setState({ newTrackerForm: defaultTrackerForm });
-  // const checkboxes = document.getElementsByClassName('form-check-input');
-  // for (let i = 0; i <= checkboxes.length; i + 1) {
-  //   checkboxes[i].checked = false;
-  // }
 }
 
 render() {
