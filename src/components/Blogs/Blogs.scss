@@ -1,8 +1,8 @@
+@import '../../styles/variables';
+
 .blog-item {
-  border-bottom: 1px solid rgb(92, 87, 87);;
-  cursor: pointer;
-  padding: 10px;
-  margin-bottom: 5px;
+@include default-resources();
+font-family: $contentFont;
 }
 .button-blog {
   margin-left: 30px !important;

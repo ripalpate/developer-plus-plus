@@ -1,5 +1,14 @@
+@import '../../styles/variables';
+
 .form {
   margin:40px 10px;
+  border: 2px solid white;
+  padding: 20px;
+  background:$lightAqua;
+  border-radius: 5px;
+  max-width:800px;
+  box-shadow: 7px 7px 2px 1px rgba(95, 95, 102, 0.2);
+  font-family: $contentFont;
 }
 .add-button {
   max-height: 50px;
