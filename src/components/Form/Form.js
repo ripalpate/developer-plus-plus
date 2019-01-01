@@ -52,7 +52,7 @@ render() {
   const { newTrackerForm } = this.state;
 
   return (
-      <div className="form col">
+      <div className="form">
         <form className="row" id= "add-form" onSubmit={this.formSubmit}>
         <div className= "col-6">
           <div className="form-group row">
