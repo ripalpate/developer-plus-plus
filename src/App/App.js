@@ -253,14 +253,14 @@ render() {
   return (
       <div className="App">
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
-        <div className="row">
+        <div className="row m-0">
         <div className="col-3 align-self-start">
           <Profile
           profile={this.state.profile}
           commits={this.state.commits}
           />
         </div>
-        <div className="col-9 align-self-start">
+        <div className="col-9 align-self-start pr-0">
           <Form onSubmit={this.formSubmitEvent}/>
           <ResourceTracker
           tutorials = {this.state.tutorials}
